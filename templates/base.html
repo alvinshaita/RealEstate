@@ -15,18 +15,20 @@
   <!-- Lightbox -->
   <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/refresh.css' %}">
 
   <title> Real Estate {% block title %}{% endblock %}</title>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <!-- Top Bar -->
   {% include 'partials/_topbar.html' %}
   <!-- NavBar -->
   {% include 'partials/_navbar.html' %}
     <!-- Main Content -->
-  {% block content %} {% endblock %}
+  <main id="main-content">{% block content %} {% endblock %}</main>
   <!-- Footer -->
   {% include 'partials/_footer.html' %}
   
