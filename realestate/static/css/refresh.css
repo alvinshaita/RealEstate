@@ -23,3 +23,8 @@
 @keyframes gallery-backdrop-out{from{opacity:1}to{opacity:0}}
 @keyframes gallery-photo-in{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.property-gallery[open],.property-gallery.is-closing,.property-gallery[open]::backdrop,.property-gallery.is-closing::backdrop,.gallery-image:not([hidden]){animation:none!important}}
+
+.inquiry-trigger,#inquiryModal .close,#inquiryModal input[type="submit"]{cursor:pointer}
+#inquiryModal .modal-content{max-height:calc(100vh - 3.5rem)}
+#inquiryModal .modal-body{overflow-y:auto}
+#inquiryModal .modal-header{flex-shrink:0}
