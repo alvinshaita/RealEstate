@@ -1,0 +1,7 @@
+{% load humanize %}
+<article class="property-card">
+  <a class="property-image" href="{% url 'listing' listing.id %}" tabindex="-1" aria-hidden="true">{% if listing.photo_main %}<img src="{{ listing.photo_main.url }}" alt="" loading="lazy">{% else %}<span class="image-placeholder">Photo coming soon</span>{% endif %}<span class="property-tag">Available</span><span class="property-arrow">↗</span></a>
+  <div class="property-content"><p class="property-price">${{ listing.price|intcomma }}</p><h3><a href="{% url 'listing' listing.id %}">{{ listing.title }}</a></h3><p class="property-address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ listing.city }}, {{ listing.state }}</p>
+  <div class="property-features"><span><i class="fas fa-bed" aria-hidden="true"></i> {{ listing.bedrooms }} beds</span><span><i class="fas fa-bath" aria-hidden="true"></i> {{ listing.bathrooms }} baths</span><span><i class="fas fa-vector-square" aria-hidden="true"></i> {{ listing.sqft|intcomma }} sqft</span></div>
+  </div>
+</article>

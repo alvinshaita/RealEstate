@@ -48,49 +48,49 @@
       <div class="row">
         <div class="col-md-9">
           <!-- Home Main Image -->
-          <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
+          <button type="button" class="gallery-trigger" data-photo-src="{{ listing.photo_main.url }}" data-gallery-photo data-caption="{{ listing.title }}" aria-label="Open property photo gallery"><img src="{{ listing.photo_main.url }}" alt="{{ listing.title }}" class="img-main img-fluid mb-3"></button>
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
             {% if listing.photo_1 %}
             <div class="col-md-2">
-              <a href="{{ listing.photo_1.url }}" data-lightbox="home-images">
-                <img src="{{ listing.photo_1.url }}" alt="" class="img-fluid">
-              </a>
+              <button type="button" class="gallery-trigger" data-photo-src="{{ listing.photo_1.url }}" data-gallery-photo data-caption="{{ listing.title }}">
+                <img src="{{ listing.photo_1.url }}" alt="{{ listing.title }} — photo 2" loading="lazy" class="img-fluid">
+              </button>
             </div>
             {% endif %}
             {% if listing.photo_2 %}
             <div class="col-md-2">
-              <a href="{{ listing.photo_2.url }}" data-lightbox="home-images">
-                <img src="{{ listing.photo_2.url }}" alt="" class="img-fluid">
-              </a>
+              <button type="button" class="gallery-trigger" data-photo-src="{{ listing.photo_2.url }}" data-gallery-photo data-caption="{{ listing.title }}">
+                <img src="{{ listing.photo_2.url }}" alt="{{ listing.title }} — photo 3" loading="lazy" class="img-fluid">
+              </button>
             </div>
             {% endif %}
             {% if listing.photo_3 %}
             <div class="col-md-2">
-              <a href="{{ listing.photo_3.url }}" data-lightbox="home-images">
-                <img src="{{ listing.photo_3.url }}" alt="" class="img-fluid">
-              </a>
+              <button type="button" class="gallery-trigger" data-photo-src="{{ listing.photo_3.url }}" data-gallery-photo data-caption="{{ listing.title }}">
+                <img src="{{ listing.photo_3.url }}" alt="{{ listing.title }} — photo 4" loading="lazy" class="img-fluid">
+              </button>
             </div>
             {% endif %}
             {% if listing.photo_4 %}
             <div class="col-md-2">
-              <a href="{{ listing.photo_4.url }}" data-lightbox="home-images">
-                <img src="{{ listing.photo_4.url }}" alt="" class="img-fluid">
-              </a>
+              <button type="button" class="gallery-trigger" data-photo-src="{{ listing.photo_4.url }}" data-gallery-photo data-caption="{{ listing.title }}">
+                <img src="{{ listing.photo_4.url }}" alt="{{ listing.title }} — photo 5" loading="lazy" class="img-fluid">
+              </button>
             </div>
             {% endif %}
             {% if listing.photo_5 %}
             <div class="col-md-2">
-              <a href="{{ listing.photo_5.url }}" data-lightbox="home-images">
-                <img src="{{ listing.photo_5.url }}" alt="" class="img-fluid">
-              </a>
+              <button type="button" class="gallery-trigger" data-photo-src="{{ listing.photo_5.url }}" data-gallery-photo data-caption="{{ listing.title }}">
+                <img src="{{ listing.photo_5.url }}" alt="{{ listing.title }} — photo 6" loading="lazy" class="img-fluid">
+              </button>
             </div>
             {% endif %}
             {% if listing.photo_6 %}
             <div class="col-md-2">
-              <a href="{{ listing.photo_6.url }}" data-lightbox="home-images">
-                <img src="{{ listing.photo_6.url }}" alt="" class="img-fluid">
-              </a>
+              <button type="button" class="gallery-trigger" data-photo-src="{{ listing.photo_6.url }}" data-gallery-photo data-caption="{{ listing.title }}">
+                <img src="{{ listing.photo_6.url }}" alt="{{ listing.title }} — photo 7" loading="lazy" class="img-fluid">
+              </button>
             </div>
             {% endif %}
           </div>
@@ -258,4 +258,12 @@
       </div>
     </div>
   </div>
+<dialog class="property-gallery" aria-label="Property photo gallery">
+  <div class="gallery-shell">
+    <header class="gallery-header"><div><p class="gallery-eyebrow">PROPERTY GALLERY</p><h2 class="gallery-title"></h2></div><button type="button" class="gallery-close" aria-label="Close gallery">×</button></header>
+    <div class="gallery-stage"><button type="button" class="gallery-prev" aria-label="Previous photo">‹</button><img class="gallery-image" alt=""><p class="gallery-status" role="status"></p><button type="button" class="gallery-next" aria-label="Next photo">›</button></div>
+    <footer class="gallery-footer"><span class="gallery-count" aria-live="polite"></span><span class="gallery-hint">Use ← → to explore · Esc to close</span></footer>
+    <div class="gallery-thumbnails" aria-label="Choose a photo"></div>
+  </div>
+</dialog>
 {% endblock %}

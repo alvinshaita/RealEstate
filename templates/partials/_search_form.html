@@ -1,0 +1,9 @@
+<form action="{% url 'search' %}" method="get" class="property-search">
+  <div class="search-fields">
+    <div><label for="search-city">Location</label><input id="search-city" name="city" placeholder="Enter a city" value="{{ values.city }}"></div>
+    <div><label for="search-bedrooms">Bedrooms</label><select id="search-bedrooms" name="bedrooms"><option value="">Any number</option>{% for key,value in bedroom_choices.items %}<option value="{{ key }}" {% if key|stringformat:'s' == values.bedrooms %}selected{% endif %}>Up to {{ value }}</option>{% endfor %}</select></div>
+    <div><label for="search-price">Your budget</label><select id="search-price" name="price"><option value="">Any price</option>{% for key,value in price_choices.items %}<option value="{{ key }}" {% if key|stringformat:'s' == values.price %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></div>
+    <button class="btn btn-primary" type="submit"><i class="fas fa-search" aria-hidden="true"></i> Find a home</button>
+  </div>
+  <details class="search-more" {% if values.keywords or values.state %}open{% endif %}><summary>More filters</summary><div class="extra-fields"><div><label for="search-keywords">Features</label><input id="search-keywords" name="keywords" placeholder="Pool, garden, garage…" value="{{ values.keywords }}"></div><div><label for="search-state">State / region</label><input id="search-state" name="state" placeholder="Any region" value="{{ values.state }}"></div></div></details>
+</form>

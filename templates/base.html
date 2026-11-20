@@ -16,17 +16,19 @@
   <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/refresh.css' %}?v=gallery-3">
 
   <title> Real Estate {% block title %}{% endblock %}</title>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <!-- Top Bar -->
   {% include 'partials/_topbar.html' %}
   <!-- NavBar -->
   {% include 'partials/_navbar.html' %}
     <!-- Main Content -->
-  {% block content %} {% endblock %}
+  <main id="main-content">{% block content %} {% endblock %}</main>
   <!-- Footer -->
   {% include 'partials/_footer.html' %}
   
@@ -34,7 +36,7 @@
   <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
   <script src="{% static 'js/lightbox.min.js' %} "></script>
-  <script src="{% static 'js/main.js' %} "></script>
+  <script src="{% static 'js/main.js' %}?v=gallery-3"></script>
 </body>
 
 </html>
